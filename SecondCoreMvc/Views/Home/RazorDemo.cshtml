@@ -1,0 +1,41 @@
+﻿@model SecondCoreMvc.EmployeeListViewModel
+<html>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Id
+            </th>
+
+            <th>
+                First Name
+            </th>
+            <th>
+                Last Name
+            </th>
+            <th>
+                City Id
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Employee)
+        {
+            <tr>
+                <td>@item.Id </td>
+                <td>@item.FirstName </td>
+                <td>@item.LastName </td>
+                <td>@item.CityId </td>
+            </tr>
+
+        }
+    </tbody>
+</table>
+<p> @DateTime.Now</p>
+@{ 
+    var time = DateTime.Now - TimeSpan.FromDays(3);
+}
+<p> 3 days ago was @time</p>
+</html>
