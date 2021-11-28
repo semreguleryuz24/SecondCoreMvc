@@ -82,6 +82,32 @@ namespace SecondCoreMvc.Controllers
             return View(model);
 
         }
+        public JsonResult Index9(string key)
+        {
+            List<Employee> employees = new List<Employee>
+            {
+                new Employee{Id=1,FirstName="Sırrı Emre",LastName="GÜLERYÜZ",CityId=6},
+                new Employee{Id=2,FirstName="Emir Taha",LastName="GÜLERYÜZ",CityId=6},
+                new Employee{Id=3,FirstName="Çınar",LastName="AYAZ",CityId=5},
+                new Employee{Id=4,FirstName="Defne",LastName="AYAZ",CityId=5}
+            };
+
+            if(string.IsNullOrEmpty(key))
+            {
+                return Json(employees);
+            }
+            var result = employees.Where(e => e.FirstName.ToLower().Contains(key)); 
+            return Json(result);
+        }
+        public ViewResult EmployeeForm()
+        {
+            return View();
+        }
+        public  string RouteData(int id)
+        {
+            return id.ToString();
+        }
+
     }
 }
 //http://engindemirog.com/home/index

@@ -1,0 +1,11 @@
+﻿@model SecondCoreMvc.EmployeeAddViewModel;
+
+
+
+<form asp-controller ="Employee" asp-action="Add">
+    Id:<input asp-for="Employee.Id"/><br />
+    First Name:<input asp-for="Employee.FirstName"/><br />
+    Last Name:<input asp-for="Employee.LastName" /><br />
+    City :<select asp-for="Employee.CityId" asp-items="Model.Cities"></select><br />
+    <button type="submit">Add</button>
+</form>
