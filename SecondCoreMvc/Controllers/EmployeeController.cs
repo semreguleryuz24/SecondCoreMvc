@@ -5,31 +5,33 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using SecondCoreMvc.Models;
 
 namespace SecondCoreMvc.Controllers
 {
     public class EmployeeController : Controller
     {
-       public IActionResult Add()
+        public IActionResult Add()
         {
-            var employeeAddViewModel = new EmployeeAddViewModel
+            var EmployeeAddViewModel = new EmployeeAddViewModel
             {
                 Employee = new Employee(),
-                Cities=new List<SelectListItem>
+                Cities = new List<SelectListItem>
                 {
-                    new SelectListItem{Text="Ankara",Value="06" },
-                    new SelectListItem{Text="İstanbul",Value="34" },
-                    new SelectListItem{Text="Erzincan",Value="24" }
+                    new SelectListItem { Text = "Ankara", Value = "6" },
+                    new SelectListItem { Text = "İstanbul", Value = "34" },
+                    new SelectListItem { Text = "Erzincan", Value = "24" }
+
                 }
-             
             };
-            return View(employeeAddViewModel);
+            return View(EmployeeAddViewModel);
         }
         [HttpPost]
         public IActionResult Add(Employee employee)
         {
+
             return View();
         }
-      
+
     }
 }

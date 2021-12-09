@@ -9,7 +9,6 @@ namespace SecondCoreMvc.Controllers
 {
     public class HomeController : Controller
     {
-
         public string Index()
         {
             return "HELLO!! First From Project";
@@ -92,21 +91,18 @@ namespace SecondCoreMvc.Controllers
                 new Employee{Id=4,FirstName="Defne",LastName="AYAZ",CityId=5}
             };
 
-            if(string.IsNullOrEmpty(key))
+            if (string.IsNullOrEmpty(key))
             {
                 return Json(employees);
             }
-            var result = employees.Where(e => e.FirstName.ToLower().Contains(key)); 
+            var result = employees.Where(e => e.FirstName.ToLower().Contains(key));
             return Json(result);
         }
         public ViewResult EmployeeForm()
         {
             return View();
         }
-        public  string RouteData(int id)
-        {
-            return id.ToString();
-        }
+
 
     }
 }

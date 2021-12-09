@@ -1,8 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc.Rendering;
 using SecondCoreMvc.Entities;
+using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
-namespace SecondCoreMvc
+namespace SecondCoreMvc.Models
 {
     public class EmployeeAddViewModel
     {
