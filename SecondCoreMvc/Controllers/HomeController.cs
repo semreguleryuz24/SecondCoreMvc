@@ -9,9 +9,10 @@ namespace SecondCoreMvc.Controllers
 {
     public class HomeController : Controller
     {
-        public string Index()
+        public ViewResult Index()
         {
-            return "HELLO!! First From Project";
+            return View();
+
         }
         public ViewResult Index2()
         {

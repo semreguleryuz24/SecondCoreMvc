@@ -6,13 +6,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using SecondCoreMvc.Models;
+using SecondCoreMvc.Services;
 
 namespace SecondCoreMvc.Controllers
 {
     public class EmployeeController : Controller
     {
+
+        private ICalculator _calculator;
+        public EmployeeController(ICalculator calculator)
+        {
+            _calculator = calculator;
+        }
         public IActionResult Add()
         {
+
             var EmployeeAddViewModel = new EmployeeAddViewModel
             {
                 Employee = new Employee(),
@@ -31,6 +39,10 @@ namespace SecondCoreMvc.Controllers
         {
 
             return View();
+        }
+        public string Calculate()
+        {
+            return _calculator.Calculate(100).ToString();
         }
 
     }
